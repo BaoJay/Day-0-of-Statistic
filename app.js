@@ -3,7 +3,7 @@ function processData(input) {
 
   // The Mean
   const x = [...input];
-  console.log(x);
+  console.log("Array input", x);
   const sumX = x.reduce((a, b) => a + b);
   //   console.log(sumX);
   const theMean = sumX / x.length;
@@ -15,7 +15,7 @@ function processData(input) {
   if (x.length % 2 === 0) {
     // sort the array ascendant: tăng dần
     const sortedArray = x.sort((a, b) => a - b);
-    console.log(sortedArray);
+    // console.log(sortedArray);
     medianIndex = sortedArray.length / 2;
     const medianNumber =
       (sortedArray[medianIndex] + sortedArray[medianIndex - 1]) / 2;
@@ -24,10 +24,18 @@ function processData(input) {
     // If 2n + 1
     // sort the array ascendant: tăng dần
     const sortedArray = x.sort((a, b) => a - b);
-    console.log(sortedArray);
+    // console.log(sortedArray);
     medianIndex = (sortedArray.length - 1) / 2;
     const medianNumber = sortedArray[medianIndex];
     console.log("This is the Median: ", medianNumber);
+  }
+
+  // The Mode
+  let sortedOccurrences = [];
+  for (let i = 0; i < sortedArray.length; i++) {
+    if (!sortedOccurrences[i]) {
+      sortedOccurrences.push(i);
+    }
   }
 }
 
